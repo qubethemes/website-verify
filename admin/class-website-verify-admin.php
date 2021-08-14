@@ -145,8 +145,9 @@ class Website_Verify_Admin {
         }
 
         // Render the settings template
-        include( sprintf( "%s/admin/templates/settings.php", dirname( __FILE__ ) ) );
-    
+        //include( sprintf( "%s/templates/settings.php", dirname( __FILE__ ) ) );
+		include Website_Verify_DIR_PATH . 'admin/partials/settings.php' ;
+		
      }
     /**
 	 * Create settings link in plugin activation page
@@ -160,5 +161,22 @@ class Website_Verify_Admin {
         array_unshift( $links, $settings_link );
         return $links;
     }
+	/**
+	 * Sanitize inputs
+	 *
+	 * @since    1.0.0
+	 */
+    
+	public function website_verify_settings_sanitize( $input ) {
+		$sanitary_values = array();
+		if ( isset( $input['google_verify'] ) ) {
+			$sanitary_values['google_verify'] = sanitize_text_field( $input['google_verify'] );
+		}
+		return $sanitary_values;
+	}
+
+
+
+
 }
 
