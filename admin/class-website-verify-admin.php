@@ -49,7 +49,7 @@ class Website_Verify_Admin {
      * @param      string    $website_verify_options The version of this plugin.
 	 */
 
-    public function __construct() {
+    public function __construct($plugin_name, $version ) {
 
         add_action( 'admin_init', array( $this, 'website_verify_admin_init' ) );
 
@@ -61,8 +61,11 @@ class Website_Verify_Admin {
 
         //add_action( 'wp_footer', array( $this, 'website_verify_footer' ), 999);
 
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+
         add_filter('plugin_action_links_'.plugin_basename(__FILE__), 'website_verify_settings_link');
 
+        $this->version = $version;
         $this->plugin_name = $plugin_name;
         $this->plugin_options = get_option( 'website_verify_options' );
 
@@ -73,7 +76,7 @@ class Website_Verify_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-    public function admin_init( $options ) {
+    public function website_verify_admin_init( $options ) {
 
         $this->init_settings();
     }
@@ -84,6 +87,15 @@ class Website_Verify_Admin {
             'website_verify_options',
             array( $this, 'website_verify_sanitize' )
         );
+
+    }
+    
+    /**
+	 * Hook into wp after setup.
+	 *
+	 * @since    1.0.0
+	 */
+    public function after_setup_theme() {
 
     }
 
@@ -105,9 +117,11 @@ class Website_Verify_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, WEBSITE_VERIFY_URL . 'admin/css/website-verify-style.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name,  plugin_dir_url( __FILE__ ) . 'admin/css/website-verify-style.css', array(), $this->version, 'all' );
 
 	}
+    public function enqueue_scripts() {
+    }
 
     /**
 	 * Create admin menu
@@ -115,8 +129,8 @@ class Website_Verify_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function website_verify_admin_menu(){
-		add_menu_page( __( 'Website Verify', 'website_verify' ), 'Website Verify', 'manage_options', 'website-verify-settings', array($this, 'website_verify_pages'), esc_url( WEBSITE_VERIFY_URL . 'admin/images/icon.svg' ) );
+	public function website_verify_add_menu(){
+		add_menu_page( __( 'Website Verify', 'website_verify' ), 'Website Verify', 'manage_options', 'website-verify-settings', array($this, 'website_verify_pages'), esc_url(  plugin_dir_url( __FILE__ ) . 'admin/images/icon.svg' ) );
 	}
     
     /**
@@ -134,6 +148,11 @@ class Website_Verify_Admin {
         include( sprintf( "%s/admin/templates/settings.php", dirname( __FILE__ ) ) );
     
      }
+    /**
+	 * Create settings link in plugin activation page
+	 *
+	 * @since    1.0.0
+	 */
 
      public function website_verify_settings_link( $links ) {
 

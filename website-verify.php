@@ -49,6 +49,13 @@ function deactivate_website_verify() {
 	Website_Verify_Deactivator::deactivate();
 }
 
+/**
+ * The core plugin class that is used to define internationalization,
+ * admin-specific hooks, and public-facing site hooks.
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-website-verify.php';
+
+
 register_activation_hook( __FILE__, 'activate_website_verify' );
 register_deactivation_hook( __FILE__, 'deactivate_website_verify' );
 
