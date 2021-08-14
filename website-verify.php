@@ -25,10 +25,43 @@ if ( !defined( 'WPINC' ) ) {
 }
 
 /**
- * Currently plugin version.
- * Start at version 1.0.0 and use SemVer - https://semver.org
- * Rename this for your plugin and update it as you release new versions.
+ * Current plugin version.
  */
 define( 'Website_Verify_VERSION', '1.0.0' );
 define( 'Website_Verify_URL', plugin_dir_url( __FILE__ ) );
 define( 'Website_Verify_DIR_PATH', plugin_dir_path( __FILE__ ) );
+
+/**
+ * The code that runs during plugin activation.
+ * This action is documented in includes/class-website-verify-activator.php
+ */
+function activate_website_verify() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-website-verify-activator.php';
+	Website_Verify_Activator::activate();
+}
+
+/**
+ * The code that runs during plugin activation.
+ * This action is documented in includes/class-website-verify-deactivator.php
+ */
+function deactivate_website_verify() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-website-verify-deactivator.php';
+	Website_Verify_Deactivator::deactivate();
+}
+
+register_activation_hook( __FILE__, 'activate_website_verify' );
+register_deactivation_hook( __FILE__, 'deactivate_website_verify' );
+
+
+/**
+ * Begins execution of the plugin.
+ *
+ * @since    1.0.0
+ */
+function run_website_verify() {
+
+	$plugin = new Website_Verify();
+	$plugin->run();
+
+}
+run_website_verify();
