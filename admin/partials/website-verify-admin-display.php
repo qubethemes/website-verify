@@ -12,7 +12,7 @@ if ( !defined( 'WPINC' ) ) {
        </div>
 		<div class="welcome-panel">
 			<div class="welcome-panel-content">
-
+			<?php settings_errors(); ?>
 				<form method="POST" action="options.php">
 					<?php settings_fields( 'website-verify' );
 					do_settings_sections( 'website-verify' );
