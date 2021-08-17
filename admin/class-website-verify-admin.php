@@ -133,14 +133,14 @@ class Website_Verify_Admin
 		);
 		add_settings_section(
 			'website_verify_section', // id
-			__('Website Verify Settings', 'website-verify'), // title
+			__('Website Verification Settings', 'website-verify'), // title
 			array($this, 'website_verify_section'), // callback
 			'website-verify' // page
 		);
 
 		add_settings_field(
 			'google_verify', // id
-			__('Google', 'website-verify'), // title
+			__('Google Verification ID', 'website-verify'), // title
 			array($this, 'google_verify_callback'), // callback
 			'website-verify', // page
 			'website_verify_section' // section
@@ -152,7 +152,7 @@ class Website_Verify_Admin
 	 */
     function website_verify_section() { 
 
-		echo __( 'This section description', 'website-verify' );
+		echo __( 'Verify your website ownership', 'website-verify' );
 	
 	}
 
@@ -165,18 +165,12 @@ class Website_Verify_Admin
 		$options = get_option( 'website_verify_options' );
         
 	      ?>
-		   <div class="welcome-panel-column-container">
-						<div class="welcome-panel-column">
-
-							<h4><?php _e( 'Webmaster Verification', 'website-verify' ); ?></h4>
 		   <p>
-			   <label><?php _e('Google Verification ID', 'website-verify') ?></label>
+			   
 			   <input id="<?php echo esc_attr('website_verify_options[google_verify]'); ?>" class="regular-text" type="text" name="<?php echo esc_attr(
 																																		'website_verify_options[google_verify]'
 																																	); ?>" value="<?php echo (!empty($options['google_verify'])) ? esc_html($options['google_verify']) : ''; ?>" />
 		  </p>
-						</div>
-		 </div>
 		<?php
       
     
