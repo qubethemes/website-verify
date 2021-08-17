@@ -62,6 +62,8 @@ class Website_Verify_Admin
         
 		add_action( 'wp_head', array( $this, 'website_verify_head' ) );
 
+		add_action( 'wp_footer', array( $this, 'website_verify_footer' ), 999);
+
 		add_action('admin_enqueue_scripts', array($this, 'enqueue_styles'));
 
 		add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'website_verify_settings_link');
@@ -110,7 +112,19 @@ class Website_Verify_Admin
 	 */
 	public function website_verify_add_menu()
 	{
-		add_menu_page(__('Website Verify', 'website_verify'), 'Website Verify', 'manage_options', 'website-verify', array($this, 'website_verify_pages'), esc_url(plugin_dir_url(__FILE__) . '/images/menu-icon.svg'));
+		$menu_icon_svg =  base64_encode(' <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+   <g id="XMLID_1_">
+	   <path id="XMLID_5_" fill="#000" d="M501.7,225.7L467,183.1c-5.5-7.1-8.7-15-10.2-24.4l-6.3-54.4c-2.4-22.1-20.5-40.2-42.5-42.5
+		   l-54.4-6.3c-9.5-0.8-18.1-4.7-25.2-10.2l-42.5-34.7c-17.3-14.2-42.5-14.2-59.9,0l-42.5,34.7c-7.1,5.5-15,8.7-24.4,10.2l-54.4,6.3
+		   c-22.1,2.4-40.2,20.5-42.5,42.5l-6.3,54.4c-0.8,9.5-4.7,18.1-10.2,25.2l-34.7,42.5c-14.2,17.3-14.2,42.5,0,59.9l34.7,42.5
+		   c5.5,7.1,8.7,15,10.2,24.4l6.3,54.4c2.4,22.1,20.5,40.2,42.5,42.5l54.4,6.3c9.5,0.8,18.1,4.7,25.2,10.2l42.5,34.7
+		   c17.3,14.2,42.5,14.2,59.9,0l42.5-34.7c7.1-5.5,15-8.7,24.4-10.2l54.4-6.3c22.1-2.4,40.2-20.5,42.5-42.5l6.3-54.4
+		   c0.8-9.5,4.7-18.1,10.2-25.2l34.7-42.5C515.1,268.2,515.1,243,501.7,225.7z M207.9,384L96,272.1l48-48l63.8,63.8L367.8,128l48,49.6
+		   L207.9,384z"/>
+   </g>
+   </svg>');
+		add_menu_page(__('Website Verify', 'website_verify'), 'Website Verify', 'manage_options', 'website-verify', array($this, 'website_verify_pages'), 'data:image/svg+xml;base64,' . $menu_icon_svg);
 	}
 
 	/**
@@ -138,12 +152,27 @@ class Website_Verify_Admin
 			'website-verify' // page
 		);
 
+		add_settings_section(
+			'website_verify_analytics_section', // id
+			__('Website Tracking Code', 'website-verify'), // title
+			array($this, 'website_verify_analytics'), // callback
+			'website-verify' // page
+		);
+
 		add_settings_field(
 			'google_verify', // id
 			__('Google Verification ID', 'website-verify'), // title
 			array($this, 'google_verify_callback'), // callback
 			'website-verify', // page
 			'website_verify_section' // section
+		);
+
+		add_settings_field(
+			'analytics_code', // id
+			__('Analytics ID', 'website-verify'), // title
+			array($this, 'analytics_callback'), // callback
+			'website-verify', // page
+			'website_verify_analytics_section' // section
 		);
 	}
     
@@ -175,8 +204,31 @@ class Website_Verify_Admin
       
     
 	}
+    
+	/**
+	 * Section Description for analytics
+	 */
+    function website_verify_analytics() { 
 
+		echo __( 'Insert your analytics code', 'website-verify' );
 	
+	}
+	
+	/**
+	 * render inputs
+	 */
+	function analytics_callback()
+	{
+
+		$options = get_option( 'website_verify_options' );
+        
+	      ?>
+		   <textarea id="<?php echo esc_attr( 'website_verify_options[analytics_code]' ); ?>" class="large-text" cols="10" rows="15" name="<?php echo esc_attr( 'website_verify_options[analytics_code]' ); ?>"><?php echo ( !empty( $options['analytics_code'] ) ) ? esc_html( $options['analytics_code'] ) : ''; ?></textarea>
+		<?php
+      
+    
+	}
+
 	/**
 	 * Sanitize inputs
 	 *
@@ -189,6 +241,11 @@ class Website_Verify_Admin
 		if (isset($input['google_verify'])) {
 			$sanitary_values['google_verify'] = sanitize_text_field($input['google_verify']);
 		}
+
+		if ( isset( $input['analytics_code'] ) ) {
+			$sanitary_values['analytics_code'] = esc_textarea( $input['analytics_code'] );
+		}
+
 		return $sanitary_values;
 	}
 
@@ -205,8 +262,8 @@ class Website_Verify_Admin
 		}
 
 		// Render the settings template
-		//include( sprintf( "%s/templates/settings.php", dirname( __FILE__ ) ) );
-		include Website_Verify_DIR_PATH . 'admin/partials/settings.php';
+		
+		include Website_Verify_DIR_PATH . 'admin/partials/website-verify-admin-display.php';
 	}
 
 	/**
@@ -219,6 +276,19 @@ class Website_Verify_Admin
 		if( !empty( $website_verify_head_options['google_verify'] ) ) {
 			echo '<meta name="google-site-verification" content="' . esc_attr( $website_verify_head_options['google_verify'] ) . '" />' . "\n";
 		}
+	}
+    
+	/**
+	 * Insert the code into footer
+	 */
+	public function website_verify_footer() {
+
+		$website_verify_footer_options = ( $this->plugin_options );
+
+		if( !empty( $website_verify_footer_options['analytics_code'] ) ) {
+			echo $website_verify_footer_options['analytics_code'];
+		}
+
 	}
 	
 	/**
