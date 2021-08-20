@@ -32,25 +32,107 @@ class Website_Verify_Admin_Settings extends Webstie_Verify_Admin_Setings_Abstrac
                             'title' => __('Google Webmaster Verification', 'website-verify'),
                             'placeholder' => __('Enter only id', 'website-verify'),
                             'description' => sprintf(
-                                __('1If you havent registered for Google Webmaster Verification Console, Go to %s You can Put the lin khere %s', 'website-verify'),
-                                '<a target="_blank" href="https://search.google.com/search-console/youcanputthelinkhere">', '</a>'
+                                __('If you havent registered for Google Webmaster Verification Console, Go to % Signup Here %s', 'website-verify'),
+                                '<a target="_blank" href="https://search.google.com/search-console/ownership">', '</a>'
                             ), 'type' => 'input'
 
                         ),
-                        'google_verify_1' => array(
+                        'bing_verify' => array(
                             'parent_id' => 'website_verify_options',
-                            'title' => __('Google Webmaster Verification1', 'website-verify'),
-                            'placeholder' => __('Enter only id1', 'website-verify'),
+                            'title' => __('Bing Webmaster Verification', 'website-verify'),
+                            'placeholder' => __('Enter only id', 'website-verify'),
                             'description' => sprintf(
-                                __('1If you havent registered for Google Webmaster Verification Console, Go to %s Sign Up Checking %s', 'website-verify'),
-                                '<a target="_blank" href="https://search.google.com/search-console/ownership">', '</a>'
-                            ),
-                            'type' => 'textarea'
+                                __('If you havent registered for Bing Webmaster Verification Console, Go to %s Signup Here %s', 'website-verify'),
+                                '<a target="_blank" href="https://www.bing.com/toolbox/webmaster">', '</a>'
+                            ), 'type' => 'input'
 
-                        )
-                    )
+                        ),
+                        'baidu_verify' => array(
+                            'parent_id' => 'website_verify_options',
+                            'title' => __('Baidu Webmaster Verification', 'website-verify'),
+                            'placeholder' => __('Enter only id', 'website-verify'),
+                            'description' => sprintf(
+                                __('If you havent registered for Baidu Webmaster Verification Console, Go to %s Signup Here %s', 'website-verify'),
+                                '<a target="_blank" href="https://passport.baidu.com/v2/?reg">', '</a>'
+                            ), 'type' => 'input'
+
+                        ),
+                        'yandex_verify' => array(
+                            'parent_id' => 'website_verify_options',
+                            'title' => __('Yandex Webmaster Verification', 'website-verify'),
+                            'placeholder' => __('Enter only id', 'website-verify'),
+                            'description' => sprintf(
+                                __('If you havent registered for Yandex Webmaster Verification Console, Go to %s Signup Here %s', 'website-verify'),
+                                '<a target="_blank" href="https://passport.yandex.com/registration?origin=webmaster">', '</a>'
+                            ), 'type' => 'input'
+
+                        ),
+                        'norton_verify' => array(
+                            'parent_id' => 'website_verify_options',
+                            'title' => __('Norton Webmaster Verification', 'website-verify'),
+                            'placeholder' => __('Enter only id', 'website-verify'),
+                            'description' => sprintf(
+                                __('If you havent registered for Norton Webmaster Verification Console, Go to %s Signup Here %s', 'website-verify'),
+                                '<a target="_blank" href="https://safeweb.norton.com/saml/login">', '</a>'
+                            ), 'type' => 'input'
+
+                        ),
+                        'pinterest_verify' => array(
+                            'parent_id' => 'website_verify_options',
+                            'title' => __('Pinterest Webmaster Verification', 'website-verify'),
+                            'placeholder' => __('Enter only id', 'website-verify'),
+                            'description' => sprintf(
+                                __('If you havent registered for Pinterest Webmaster Verification Console, Go to %s Signup Here %s', 'website-verify'),
+                                '<a target="_blank" href="http://pinterest.com/business/create">', '</a>'
+                            ), 'type' => 'input'
+
+                        ),
+                        
 
             )
+            
+                    ),
+            
+
+                    'analytics_scripts' => array(
+                        'title' => __('Analytics Scripts', 'website-verify'),
+                        'instructions' => array(
+                            'title' => __('Instructions', 'website-verify'),
+                            'lists' => array(
+                                '1. Copy the script tags and paste in the text area : Example of script tag<br/>
+                                <code>&lt; script &gt;
+                                (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){
+                                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+                                Date();a=s.createElement(o),
+                                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                })(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');
+                                ga(\'create\', \'UA-xxxxxx-1\', \'auto\');
+                                ga(\'send\', \'pageview\');
+                                &lt;/ script &gt;</code>',
+                                '2. You can add unlimited script tags in the text area',
+                                '3. Keep space between tags for readabilty purpose'
+                            ),
+                            'allowed_html' => array(
+                                'br' => array(),
+                                'code' => array(),
+                            )
+                        ),
+                        'type' => 'section',
+                        'fields' =>
+                            array(
+                                'analytics_scripts_field' => array(
+                                    'parent_id' => 'website_verify_options',
+                                    'title' => __('Analytics Scripts', 'website-verify'),
+                                    'placeholder' => __('Enter script tags', 'website-verify'),
+                                    'description' => sprintf(
+                                        __('You can add comments to maintain redability like this: %s add comments %s', 'website-verify'),
+                                        '/*', '/*'
+                                    ),
+                                    'type' => 'textarea'
+                
+                                )
+                            ),
+                    )
         ));
 
     }

@@ -128,7 +128,7 @@ class Website_Verify_Admin
          * class.
          */
 
-        wp_enqueue_style($this->plugin_name, Website_Verify_URL . 'admin/css/website-verify-style.css', array(), $this->version, 'all');
+        wp_enqueue_style($this->plugin_name, WEBSITE_VERIFY_URL . 'admin/css/website-verify-style.css', array(), $this->version, 'all');
     }
 
     /**

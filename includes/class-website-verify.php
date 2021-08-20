@@ -77,8 +77,8 @@ class Website_Verify {
     }
 
 	public function __construct() {
-		if ( defined( 'Website_Verify_Version' ) ) {
-			$this->version = Website_Verify_Version;
+		if ( defined( 'WEBSITE_VERIFY_VERSION' ) ) {
+			$this->version = WEBSITE_VERIFY_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}

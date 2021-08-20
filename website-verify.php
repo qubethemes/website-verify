@@ -27,8 +27,8 @@ if ( !defined( 'WPINC' ) ) {
 /**
  * Current plugin version.
  */
-define( 'Website_Verify_VERSION', '1.0.0' );
-define( 'Website_Verify_URL', plugin_dir_url( __FILE__ ) );
+define( 'WEBSITE_VERIFY_VERSION', '1.0.0' );
+define( 'WEBSITE_VERIFY_URL', plugin_dir_url( __FILE__ ) );
 define( 'WEBSITE_VERIFY_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
@@ -36,7 +36,7 @@ define( 'WEBSITE_VERIFY_DIR_PATH', plugin_dir_path( __FILE__ ) );
  * This action is documented in includes/class-website-verify-activator.php
  */
 function activate_website_verify() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-website-verify-activator.php';
+	require_once WEBSITE_VERIFY_DIR_PATH . 'includes/class-website-verify-activator.php';
 	Website_Verify_Activator::activate();
 }
 
@@ -45,7 +45,7 @@ function activate_website_verify() {
  * This action is documented in includes/class-website-verify-deactivator.php
  */
 function deactivate_website_verify() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-website-verify-deactivator.php';
+	require_once WEBSITE_VERIFY_DIR_PATH . 'includes/class-website-verify-deactivator.php';
 	Website_Verify_Deactivator::deactivate();
 }
 
@@ -53,7 +53,7 @@ function deactivate_website_verify() {
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-website-verify.php';
+require WEBSITE_VERIFY_DIR_PATH . 'includes/class-website-verify.php';
 
 
 register_activation_hook( __FILE__, 'activate_website_verify' );
