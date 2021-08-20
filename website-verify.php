@@ -29,7 +29,7 @@ if ( !defined( 'WPINC' ) ) {
  */
 define( 'Website_Verify_VERSION', '1.0.0' );
 define( 'Website_Verify_URL', plugin_dir_url( __FILE__ ) );
-define( 'Website_Verify_DIR_PATH', plugin_dir_path( __FILE__ ) );
+define( 'WEBSITE_VERIFY_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
  * The code that runs during plugin activation.

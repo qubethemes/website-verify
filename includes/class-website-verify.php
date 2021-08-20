@@ -158,6 +158,7 @@ class Website_Verify {
 	private function define_admin_hooks() {
 
 	    if(is_admin()) {
+
             $this->admin = new Website_Verify_Admin($this->get_plugin_name(), $this->get_version());
 
             $this->loader->add_action('admin_enqueue_scripts', $this->admin, 'enqueue_styles');
