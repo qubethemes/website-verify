@@ -101,7 +101,7 @@ class Website_Verify_Admin
 		 * class.
 		 */
 
-		wp_enqueue_style($this->plugin_name,  plugin_dir_url(__FILE__) . 'admin/css/website-verify-style.css', array(), $this->version, 'all');
+		wp_enqueue_style($this->plugin_name,  Website_Verify_URL . 'admin/css/website-verify-style.css', array(), $this->version, 'all');
 	}
 	
 	/**
@@ -124,7 +124,7 @@ class Website_Verify_Admin
 		   L207.9,384z"/>
    </g>
    </svg>');
-		add_menu_page(__('Website Verify', 'website_verify'), 'Website Verify', 'manage_options', 'website-verify', array($this, 'website_verify_pages'), 'data:image/svg+xml;base64,' . $menu_icon_svg);
+		add_menu_page(__('WEBSITE VERIFY', 'website_verify'), 'Website Verify', 'manage_options', 'website-verify', array($this, 'website_verify_pages'), 'data:image/svg+xml;base64,' . $menu_icon_svg);
 	}
 
 	/**
@@ -134,87 +134,12 @@ class Website_Verify_Admin
 	 */
 	public function website_verify_admin_init($options)
 	{
-
-		$this->init_settings();
-	}
-
-	public function init_settings()
-	{
 		register_setting(
 			'website-verify',
 			'website_verify_options',
 			array($this, 'website_verify_sanitize')
 		);
-		add_settings_section(
-			'website_verify_section', // id
-			__('Website Verification Settings', 'website-verify'), // title
-			array($this, 'website_verify_section'), // callback
-			'website-verify' // page
-		);
-
-		add_settings_section(
-			'website_verify_analytics_section', // id
-			__('Website Tracking Code', 'website-verify'), // title
-			array($this, 'website_verify_analytics'), // callback
-			'website-verify' // page
-		);
-
-		add_settings_field(
-			'google_verify', // id
-			__('Google Verification ID', 'website-verify'), // title
-			array($this, 'google_verify_callback'), // callback
-			'website-verify', // page
-			'website_verify_section' // section
-		);
-
-		add_settings_field(
-			'bing_verify', // id
-			__('Bing Verification ID', 'website-verify'), // title
-			array($this, 'bing_verify_callback'), // callback
-			'website-verify', // page
-			'website_verify_section' // section
-		);
-
-		add_settings_field(
-			'baidu_verify', // id
-			__('Baidu Verification ID', 'website-verify'), // title
-			array($this, 'baidu_verify_callback'), // callback
-			'website-verify', // page
-			'website_verify_section' // section
-		);
-
-		add_settings_field(
-			'yandex_verify', // id
-			__('Yandex Verification ID', 'website-verify'), // title
-			array($this, 'yandex_verify_callback'), // callback
-			'website-verify', // page
-			'website_verify_section' // section
-		);
-        
-		add_settings_field(
-			'norton_verify', // id
-			__('Norton Safe Web Meta Tag', 'website-verify'), // title
-			array($this, 'norton_verify_callback'), // callback
-			'website-verify', // page
-			'website_verify_section' // section
-		);
-
-		add_settings_field(
-			'pinterest_verify', // id
-			__('Pinterest Verification ID', 'website-verify'), // title
-			array($this, 'pinterest_verify_callback'), // callback
-			'website-verify', // page
-			'website_verify_section' // section
-		);
 		
-
-		add_settings_field(
-			'analytics_code', // id
-			__('Analytics ID', 'website-verify'), // title
-			array($this, 'analytics_callback'), // callback
-			'website-verify', // page
-			'website_verify_analytics_section' // section
-		);
 	}
     
 	/**
@@ -222,115 +147,11 @@ class Website_Verify_Admin
 	 */
     function website_verify_section() { 
 
-		echo __( 'Verify your website ownership', 'website-verify' );
+		return __( 'Verify your website ownership', 'website-verify' );
 	
 	}
 
-	/**
-	 * render inputs
-	 */
-	function google_verify_callback()
-	{
-
-		$options = get_option( 'website_verify_options' );
-        
-	      ?>
-		   <p>
-			   
-			   <input id="<?php echo esc_attr('website_verify_options[google_verify]'); ?>" class="regular-text" type="text" name="<?php echo esc_attr(
-																																		'website_verify_options[google_verify]'
-																																	); ?>" value="<?php echo (!empty($options['google_verify'])) ? esc_html($options['google_verify']) : ''; ?>" />
-		  </p>
-		<?php
-      
-    
-	}
-
-	function bing_verify_callback()
-	{
-
-		$options = get_option( 'website_verify_options' );
-        
-	      ?>
-		   <p>
-			   
-			   <input id="<?php echo esc_attr('website_verify_options[bing_verify]'); ?>" class="regular-text" type="text" name="<?php echo esc_attr(
-																																		'website_verify_options[bing_verify]'
-																																	); ?>" value="<?php echo (!empty($options['bing_verify'])) ? esc_html($options['bing_verify']) : ''; ?>" />
-		  </p>
-		<?php
-      
-    
-	}
-
-	function yandex_verify_callback()
-	{
-
-		$options = get_option( 'website_verify_options' );
-        
-	      ?>
-		   <p>
-			   
-			   <input id="<?php echo esc_attr('website_verify_options[yandex_verify]'); ?>" class="regular-text" type="text" name="<?php echo esc_attr(
-																																		'website_verify_options[yandex_verify]'
-																																	); ?>" value="<?php echo (!empty($options['yandex_verify'])) ? esc_html($options['yandex_verify']) : ''; ?>" />
-		  </p>
-		<?php
-      
-    
-	}
-
-	function baidu_verify_callback()
-	{
-
-		$options = get_option( 'website_verify_options' );
-        
-	      ?>
-		   <p>
-			   
-			   <input id="<?php echo esc_attr('website_verify_options[baidu_verify]'); ?>" class="regular-text" type="text" name="<?php echo esc_attr(
-																																		'website_verify_options[baidu_verify]'
-																																	); ?>" value="<?php echo (!empty($options['baidu_verify'])) ? esc_html($options['baidu_verify']) : ''; ?>" />
-		  </p>
-		<?php
-      
-    
-	}
-
-	function norton_verify_callback()
-	{
-
-		$options = get_option( 'website_verify_options' );
-        
-	      ?>
-		   <p>
-			   
-			   <input id="<?php echo esc_attr('website_verify_options[norton_verify]'); ?>" class="regular-text" type="text" name="<?php echo esc_attr(
-																																		'website_verify_options[norton_verify]'
-																																	); ?>" value="<?php echo (!empty($options['norton_verify'])) ? esc_html($options['norton_verify']) : ''; ?>" />
-		  </p>
-		<?php
-      
-    
-	}
-
-	function pinterest_verify_callback()
-	{
-
-		$options = get_option( 'website_verify_options' );
-        
-	      ?>
-		   <p>
-			   
-			   <input id="<?php echo esc_attr('website_verify_options[pinterest_verify]'); ?>" class="regular-text" type="text" name="<?php echo esc_attr(
-																																		'website_verify_options[pinterest_verify]'
-																																	); ?>" value="<?php echo (!empty($options['pinterest_verify'])) ? esc_html($options['pinterest_verify']) : ''; ?>" />
-		  </p>
-		<?php
-      
-    
-	}
-
+	
     
 	/**
 	 * Section Description for analytics
@@ -344,17 +165,7 @@ class Website_Verify_Admin
 	/**
 	 * render inputs
 	 */
-	function analytics_callback()
-	{
-
-		$options = get_option( 'website_verify_options' );
-        
-	      ?>
-		   <textarea id="<?php echo esc_attr( 'website_verify_options[analytics_code]' ); ?>" class="large-text" cols="10" rows="15" name="<?php echo esc_attr( 'website_verify_options[analytics_code]' ); ?>"><?php echo ( !empty( $options['analytics_code'] ) ) ? esc_html( $options['analytics_code'] ) : ''; ?></textarea>
-		<?php
-      
-    
-	}
+	
 
 	/**
 	 * Sanitize inputs
