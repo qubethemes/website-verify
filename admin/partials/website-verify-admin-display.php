@@ -51,7 +51,7 @@ if (!defined('WPINC')) {
                                                                                                                                                     ); ?>" aria-describedby="googleVerify" value="<?php echo (!empty($options['google_verify'])) ? esc_html($options['google_verify']) : ''; ?>" placeholder="Enter only id" />
 
 
-                                <small id="googleVerify" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <small id="googleVerify" class="form-text text-muted">If you havent registered for Google Webmaster Verification Console, Go to <a href="https://search.google.com/search-console/ownership">Signup here</a></small>
 
                             </div>
                             <div class="input-group">
@@ -61,7 +61,7 @@ if (!defined('WPINC')) {
                                                                                                                                                     ); ?>"  aria-describedby="bingVerify" value="<?php echo (!empty($options['bing_verify'])) ? esc_html($options['bing_verify']) : ''; ?>" placeholder="Enter only id" />
 
 
-                                <small id="bingVerify" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <small id="bingVerify" class="form-text text-muted">If you havent registered for Bing Webmaster Verification, Go to <a href="https://www.bing.com/toolbox/webmaster/">Signup here</a></small>
 
                             </div>
                             <div class="input-group">
@@ -71,7 +71,7 @@ if (!defined('WPINC')) {
                                                                                                                                                     ); ?>" aria-describedby="baiduVerify" value="<?php echo (!empty($options['baidu_verify'])) ? esc_html($options['baidu_verify']) : ''; ?>" placeholder="Enter only id" />
 
 
-                                <small id="baiduVerify" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <small id="baiduVerify" class="form-text text-muted">If you havent registered for Baidu Webmaster Verification, Go to <a href="https://passport.baidu.com/v2/?reg">Signup here</a></small>
 
                             </div>
                             <div class="input-group">
@@ -81,7 +81,7 @@ if (!defined('WPINC')) {
                                                                                                                                                     ); ?>"aria-describedby="yandexVerify" value="<?php echo (!empty($options['yandex_verify'])) ? esc_html($options['yandex_verify']) : ''; ?>" placeholder="Enter only id" />
 
 
-                                <small id="yandexVerify" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <small id="yandexVerify" class="form-text text-muted">If you havent registered for Yandex Webmaster Verification, Go to <a href="https://passport.yandex.com/registration?origin=webmaster">Signup here</a></small>
 
                             </div>
                             <div class="input-group">
@@ -91,7 +91,7 @@ if (!defined('WPINC')) {
                                                                                                                                                     ); ?>"aria-describedby="nortonVerify" value="<?php echo (!empty($options['norton_verify'])) ? esc_html($options['norton_verify']) : ''; ?>" placeholder="Enter only id" />
 
 
-                                <small id="nortonVerify" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <small id="nortonVerify" class="form-text text-muted">If you havent registered for Norton Webmaster Verification, <a href="https://safeweb.norton.com/saml/login">Signup here</a></small>
 
                             </div>
                             <div class="input-group">
@@ -101,7 +101,7 @@ if (!defined('WPINC')) {
                                                                                                                                                     ); ?>"aria-describedby="pinterestVerify" value="<?php echo (!empty($options['pinterest_verify'])) ? esc_html($options['pinterest_verify']) : ''; ?>" placeholder="Enter only id" />
 
 
-                                <small id="pinterestVerify" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <small id="pinterestVerify" class="form-text text-muted">If you havent registered for Pinterest Webmaster Verification, <a href="http://pinterest.com/business/create/">Signup here</a></small>
 
                             </div>
                         </div>

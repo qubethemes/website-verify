@@ -1,3 +1,170 @@
-body{
-    background:#000;
-}
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+  }
+  .p1{
+    padding:1em;
+  }
+  .website-verify-wrapper{
+    margin: 10px 0px 10px 0px;
+  }
+  .website-verify-header{
+    padding: 20px 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 5px;
+  }
+  .website-verify-brand {
+    color: #424242;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.87rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .website-verify-brand:focus{
+    color: #424242;
+    box-shadow: 0 0 0 0px transparent !important;
+    
+  }
+  .website-verify-version{
+    float:right;
+    font-size: 1rem;
+    font-weight:400;
+    padding-top: 10px;
+  }
+  .d-inline-block {
+    display: inline-block !important;
+  }
+  .align-text-top {
+    vertical-align: text-top !important;
+  }
+  
+  .website-verify-container .section_title{
+    margin-bottom: 2em;
+  }
+  .website-verify-container .instruction{
+    color: #055160;
+    background-color: #cff4fc;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid   border-color: #b6effb;
+    border-radius: .25rem;
+  }
+  .website-verify-container .instruction p{
+    color: #055160 !important;
+    font: 16px !important;
+    font-weight: 600;
+  }
+  .website-verify-container code {
+    background: #f9f9f9;
+    border: 1px solid #f3f3f4;
+    font-family: monospace;
+    padding: 4px 8px;
+  }
+  .website-verify-container .input-group {
+    position:relative;
+    margin-bottom: 1rem;
+  }
+  .website-verify-container .form-control {
+    font-size:1rem;
+    border-radius:.45rem;
+    box-shadow:none 
+  }
+  .website-verify-container .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 1.2625rem);
+    padding: .6rem .75rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #323232;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: .02rem solid #e8e8e8;
+    border-radius: .45rem;
+    box-shadow: 0 5px 17px rgba(0,0,0,0.05);
+    transition: all 0.3s ease-in-out;
+  }
+  .website-verify-container .form-control:focus {
+    border-color: #006bff;
+    background-color:#e6f1ff;
+    ;
+  }
+  .website-verify-container .form-control:focus::placeholder {
+    color:#c0c0c0;
+  }
+  .website-verify-container .form-control:active {
+    border-color: #006bff;
+  }
+  .website-verify-container textarea[resize="none"] {
+    resize:none !important 
+  }
+  .website-verify-container textarea[resize="both"] {
+    resize:both !important 
+  }
+  .website-verify-container textarea[resize="vertical"] {
+    resize:vertical !important 
+  }
+  .website-verify-container textarea[resize="horizontal"] {
+    resize:horizontal !important 
+  }
+  .website-verify-container .form-control-muted {
+    background-color:#fff;
+    border-color:#fff;
+    box-shadow:none 
+  }
+  .website-verify-container .form-control-muted:focus {
+    background-color:#fff 
+  }
+  .website-verify-container .focused .input-group-text {
+    border-color: #006bff;
+    background-color:#e6f1ff;
+  }
+  .website-verify-container .focused .form-control {
+    border-color: #006bff;
+    background-color:#e6f1ff;
+  }
+  .website-verify-container label {
+    font-size: .875rem;
+  }
+  .website-verify-container label {
+    font-weight: 600;
+  }
+  .website-verify-container label {
+    display: inline-block;
+    margin-bottom: .5rem;
+  }
+  .website-verify-container textarea {
+    overflow:auto;
+    resize:vertical 
+  }
+  .website-verify-container textarea.form-control {
+    height: auto;
+  }
+  .wp-core-ui .button.update-tags{
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    font-size:1rem;
+    font-weight:400;
+    line-height:1.5;
+    padding: .375rem .75rem;
+  }
+  .wp-core-ui .button.update-tags:focus {
+    color: #fff;
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+    box-shadow: 0 0 0 .25rem rgba(49,132,253,.5);
+  }
+  

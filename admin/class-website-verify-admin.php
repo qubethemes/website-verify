@@ -158,7 +158,7 @@ class Website_Verify_Admin
 	 */
     function website_verify_analytics() { 
 
-		echo __( 'Insert your analytics code', 'website-verify' );
+		return __( 'Insert your analytics code', 'website-verify' );
 	
 	}
 	
