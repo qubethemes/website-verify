@@ -32,7 +32,7 @@ class Website_Verify_Admin_Settings extends Webstie_Verify_Admin_Setings_Abstrac
                             'title' => __('Google Webmaster Verification', 'website-verify'),
                             'placeholder' => __('Enter only id', 'website-verify'),
                             'description' => sprintf(
-                                __('If you havent registered for Google Webmaster Verification Console, Go to % Signup Here %s', 'website-verify'),
+                                __('If you havent registered for Google Webmaster Verification Console, Go to %s Signup Here %s', 'website-verify'),
                                 '<a target="_blank" href="https://search.google.com/search-console/ownership">', '</a>'
                             ), 'type' => 'input'
 

@@ -86,7 +86,10 @@ class Website_Verify_Admin
 
 
     }
-
+    
+    /**
+     * Load dependencies
+     */
     public function load_dependencies()
     {
 
@@ -168,32 +171,6 @@ class Website_Verify_Admin
         );
 
     }
-
-    /**
-     * Section Description
-     */
-    function website_verify_section()
-    {
-
-        return __('Verify your website ownership', 'website-verify');
-
-    }
-
-
-    /**
-     * Section Description for analytics
-     */
-    function website_verify_analytics()
-    {
-
-        return __('Insert your analytics code', 'website-verify');
-
-    }
-
-    /**
-     * render inputs
-     */
-
 
     /**
      * Sanitize inputs
