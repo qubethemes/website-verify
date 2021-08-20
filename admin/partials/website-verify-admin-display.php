@@ -10,8 +10,7 @@ if (!defined('WPINC')) {
         <div class="website-verify-header">
 
             <a class="website-verify-brand" href="#">
-                <img src="<?php echo __(WEBSITE_VERIFY_URL . 'admin/images/logo.svg') ?>" alt=""
-                     class="d-inline-block align-text-top" width="40" height="40">
+                <img src="<?php echo __(WEBSITE_VERIFY_URL . 'admin/images/logo.svg') ?>" alt="" class="d-inline-block align-text-top" width="40" height="40">
 
                 <?php echo esc_html(get_admin_page_title()); ?>
             </a>
@@ -28,29 +27,23 @@ if (!defined('WPINC')) {
                     $options = get_option('website_verify_options');
                     ?>
                     <div class="website-verify-container">
-                    <?php
-                    
-                    //display form here
-                    $display = new Website_Verify_Admin_Settings() ;
-                    $this->Website_Verify_Admin_Settings;
-                    ?>
+                        <?php
+                        //display form here
+                        $this->settings;
+                        ?>
                         <h2><?php _e('Webmaster Verification', 'website-verify'); ?></h2>
                         <p class="sub-title">
                             Please fill your meta tag and analytics information.
                         </p>
                         <div class="row">
                             <?php
-                           $this->settings->output();
+                            $this->settings->output();
                             ?>
-                            
                         </div>
                         <?php submit_button('Save Changes', 'update-tags'); ?>
                     </div>
-
-
                 </form>
             </div>
         </div>
-
     </div>
 </div>

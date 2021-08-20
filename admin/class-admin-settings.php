@@ -13,10 +13,10 @@ class Website_Verify_Admin_Settings extends Webstie_Verify_Admin_Setings_Abstrac
                 'instructions' => array(
                     'title' => __('Instructions', 'website-verify'),
                     'lists' => array(
-                        '1. Copy the code from the content attribute,as shown in example:<br/>
+                        ' Copy the code from the content attribute,as shown in example:<br/>
                                 &lt;meta name="google-site-verification" content="<code>Zf6gKlRQGrTESbyS5HPHftpVDjH_GY56UYTTdFFre</code>"',
-                        '2. Add your site verification code and in respective meta tag and save the changes.',
-                        '3. Meta Tags will be inserted in header section'
+                        ' Add your site verification code and in respective meta tag and save the changes.',
+                        ' Meta Tags will be inserted in header section'
                     ),
                     'allowed_html' => array(
                         'br' => array(),
@@ -99,7 +99,7 @@ class Website_Verify_Admin_Settings extends Webstie_Verify_Admin_Setings_Abstrac
                         'instructions' => array(
                             'title' => __('Instructions', 'website-verify'),
                             'lists' => array(
-                                '1. Copy the script tags and paste in the text area : Example of script tag<br/>
+                                ' Copy the script tags and paste in the text area : Example of script tag<br/>
                                 <code>&lt; script &gt;
                                 (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){
                                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
@@ -109,8 +109,8 @@ class Website_Verify_Admin_Settings extends Webstie_Verify_Admin_Setings_Abstrac
                                 ga(\'create\', \'UA-xxxxxx-1\', \'auto\');
                                 ga(\'send\', \'pageview\');
                                 &lt;/ script &gt;</code>',
-                                '2. You can add unlimited script tags in the text area',
-                                '3. Keep space between tags for readabilty purpose'
+                                ' You can add unlimited script tags in the text area',
+                                ' Keep space between tags for readabilty purpose'
                             ),
                             'allowed_html' => array(
                                 'br' => array(),
