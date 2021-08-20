@@ -4,6 +4,7 @@
 if (!defined('WPINC')) {
     die;
 }
+echo website_verify()->admin->website_verify_section();
 
 ?>
 <div class="wrap">
@@ -39,7 +40,7 @@ if (!defined('WPINC')) {
                             <div class="instruction">
                                 <strong>Instructions</strong>
                                 <p> 1. Copy the code from the content attribute,as shown in example:<br/>
-                                &lt;meta name="google-site-verification" content="<code>Zf6gKlRQGrTESbyS5HPHftpVDjH_GY56UYTTdFFre</code>" /&gt;. 
+                                &lt;meta name="google-site-verification" content="<code>Zf6gKlRQGrTESbyS5HPHftpVDjH_GY56UYTTdFFre</code>" /&gt;.
                                 <p>2. Add your site verification code and in respective meta tag and save the changes.</p>
                                 <p>3. Meta Tags will be inserted in header section</p>
 
@@ -115,7 +116,7 @@ if (!defined('WPINC')) {
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
- 
+
   ga('create', 'UA-xxxxxx-1', 'auto');
   ga('send', 'pageview');
   &lt;/ script &gt;</code>
@@ -133,12 +134,12 @@ if (!defined('WPINC')) {
                        </div>
                        <?php  submit_button ( 'Save Changes', 'update-tags' ); ?>
                     </div>
-                    
-                   
+
+
 
                 </form>
             </div>
         </div>
-        
+
     </div>
 </div>

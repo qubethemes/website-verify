@@ -1,7 +1,7 @@
 <?php
 /**
  * The file defines the core plugin class
- * 
+ *
  * @link              https://qubethemes.com/
  * @since             1.0.0
  * @package           Website-Verify
@@ -57,6 +57,25 @@ class Website_Verify {
 	 *
 	 * @since    1.0.0
 	 */
+
+	private static $instance=null;
+
+    /**
+     * @var Website_Verify_Admin
+     */
+    public $admin=null;
+
+
+
+	public static function get_instance(){
+	    if(is_null(self::$instance)){
+	       self::$instance = new self;
+        }else if ( self::$instance instanceof self){
+            self::$instance = new self;
+        }
+	    return self::$instance;
+    }
+
 	public function __construct() {
 		if ( defined( 'Website_Verify_Version' ) ) {
 			$this->version = Website_Verify_Version;
@@ -68,7 +87,8 @@ class Website_Verify {
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
-		
+		$this->run();
+
 
 	}
 
@@ -137,10 +157,11 @@ class Website_Verify {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Website_Verify_Admin( $this->get_plugin_name(), $this->get_version() );
+	    if(is_admin()) {
+            $this->admin = new Website_Verify_Admin($this->get_plugin_name(), $this->get_version());
 
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		
+            $this->loader->add_action('admin_enqueue_scripts', $this->admin, 'enqueue_styles');
+        }
 
 	}
 

@@ -69,7 +69,9 @@ class Website_Verify_Admin
 		add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'website_verify_settings_link');
 
 		$this->version = $version;
+
 		$this->plugin_name = $plugin_name;
+
 		$this->plugin_options = get_option('website_verify_options');
 		
 	}

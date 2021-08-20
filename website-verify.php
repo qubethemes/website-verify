@@ -7,7 +7,7 @@
  * @package           Website-Verify
  *
  * @wordpress-plugin
- * Plugin Name:       Website-Verify
+ * Plugin Name:       Website Verify
  * Plugin URI:        https://qubethemes.com/
  * Description:       Add verification code to verify your website using Google.
  * Version:           1.0.0
@@ -65,10 +65,10 @@ register_deactivation_hook( __FILE__, 'deactivate_website_verify' );
  *
  * @since    1.0.0
  */
-function run_website_verify() {
+function website_verify() {
 
-	$plugin = new Website_Verify();
-	$plugin->run();
+return Website_Verify::get_instance();
+
 
 }
-run_website_verify();
+website_verify();
