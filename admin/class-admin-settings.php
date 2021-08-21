@@ -5,7 +5,7 @@ class Website_Verify_Admin_Settings extends Webstie_Verify_Admin_Setings_Abstrac
 
     public function get_fields()
     {
-        // TODO: Implement get_fields() method.
+        //Implement get_fields() method.
 
         return apply_filters('website_verify_admin_settings', array(
             'meta_tag_info' => array(
