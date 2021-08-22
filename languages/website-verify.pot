@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Website Verify 1.0.0\n"
 "Report-Msgid-Bugs-To: qubethemes@gmail.com\n"
-"POT-Creation-Date: 2021-08-22 05:25:56+00:00\n"
+"POT-Creation-Date: 2021-08-22 05:30:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -120,11 +120,13 @@ msgid "Website Verify"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://qubethemes.com/"
+msgid "https://wordpress.org/plugins/website-verify"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Add verification code to verify your website using Google."
+msgid ""
+"Add verification code to verify your website using Google & Other Search "
+"Engines"
 msgstr ""
 
 #. Author of the plugin/theme
@@ -132,5 +134,5 @@ msgid "qubethemes"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://profiles.wordpress.org/qubethemes"
+msgid "https://qubethemes.com/"
 msgstr ""
