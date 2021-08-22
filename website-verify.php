@@ -8,11 +8,11 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Website Verify
- * Plugin URI:        https://qubethemes.com/
- * Description:       Add verification code to verify your website using Google.
+ * Plugin URI:        https://wordpress.org/plugins/website-verify
+ * Description:       Add verification code to verify your website using Google & Other Search Engines
  * Version:           1.0.0
  * Author:            qubethemes
- * Author URI:        https://profiles.wordpress.org/qubethemes
+ * Author URI:        https://qubethemes.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       website-verify
