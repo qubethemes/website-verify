@@ -154,7 +154,7 @@ class Website_Verify_Admin
 		   L207.9,384z"/>
    </g>
    </svg>');
-        add_menu_page(__('WEBSITE VERIFY', 'website_verify'), 'Website Verify', 'manage_options', 'website-verify', array($this, 'website_verify_pages'), 'data:image/svg+xml;base64,' . $menu_icon_svg);
+        add_menu_page(__('WEBSITE VERIFY', 'website-verify'), 'Website Verify', 'manage_options', 'website-verify', array($this, 'website_verify_pages'), 'data:image/svg+xml;base64,' . $menu_icon_svg);
     }
 
     /**
@@ -226,7 +226,7 @@ class Website_Verify_Admin
     public function website_verify_pages()
     {
         if (!current_user_can('manage_options')) {
-            wp_die(esc_attr__('You do not have sufficient permissions to access this page.'));
+            wp_die(esc_attr__('You do not have sufficient permissions to access this page.', 'website-verify'));
         }
 
         // Render the settings template
@@ -286,7 +286,7 @@ class Website_Verify_Admin
     public function website_verify_settings_link($links)
     {
 
-        $settings_link = '<a href="admin.php?page=website-verify">' . __('Settings', 'website_verify') . '</a>';
+        $settings_link = '<a href="admin.php?page=website-verify">' . __('Settings', 'website-verify') . '</a>';
         array_unshift($links, $settings_link);
         return $links;
     }

@@ -10,7 +10,7 @@ if (!defined('WPINC')) {
         <div class="website-verify-header">
 
             <a class="website-verify-brand" href="#">
-                <img src="<?php echo __(WEBSITE_VERIFY_URL . 'admin/images/logo.svg') ?>" alt="" class="d-inline-block align-text-top" width="40" height="40">
+                <img src="<?php echo esc_url(WEBSITE_VERIFY_URL) . 'admin/images/logo.svg'; ?>" alt="" class="d-inline-block align-text-top" width="40" height="40">
 
                 <?php echo esc_html(get_admin_page_title()); ?>
             </a>

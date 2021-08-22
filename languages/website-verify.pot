@@ -1,0 +1,136 @@
+# Copyright (C) 2021 qubethemes
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Website Verify 1.0.0\n"
+"Report-Msgid-Bugs-To: qubethemes@gmail.com\n"
+"POT-Creation-Date: 2021-08-22 05:22:24+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
+"Last-Translator: QubeThemes <qubethemes@gmail.com>\n"
+"Language-Team: QubeThemes <qubethemes@gmail.com>\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: admin/class-admin-settings.php:12
+msgid "Meta Tag Info"
+msgstr ""
+
+#: admin/class-admin-settings.php:14 admin/class-admin-settings.php:100
+msgid "Instructions"
+msgstr ""
+
+#: admin/class-admin-settings.php:32
+msgid "Google Webmaster Verification"
+msgstr ""
+
+#: admin/class-admin-settings.php:33 admin/class-admin-settings.php:43
+#: admin/class-admin-settings.php:53 admin/class-admin-settings.php:63
+#: admin/class-admin-settings.php:73 admin/class-admin-settings.php:83
+msgid "Enter only id"
+msgstr ""
+
+#: admin/class-admin-settings.php:35
+msgid ""
+"If you havent registered for Google Webmaster Verification Console, Go to "
+"%s Signup Here %s"
+msgstr ""
+
+#: admin/class-admin-settings.php:42
+msgid "Bing Webmaster Verification"
+msgstr ""
+
+#: admin/class-admin-settings.php:45
+msgid ""
+"If you havent registered for Bing Webmaster Verification Console, Go to %s "
+"Signup Here %s"
+msgstr ""
+
+#: admin/class-admin-settings.php:52
+msgid "Baidu Webmaster Verification"
+msgstr ""
+
+#: admin/class-admin-settings.php:55
+msgid ""
+"If you havent registered for Baidu Webmaster Verification Console, Go to %s "
+"Signup Here %s"
+msgstr ""
+
+#: admin/class-admin-settings.php:62
+msgid "Yandex Webmaster Verification"
+msgstr ""
+
+#: admin/class-admin-settings.php:65
+msgid ""
+"If you havent registered for Yandex Webmaster Verification Console, Go to "
+"%s Signup Here %s"
+msgstr ""
+
+#: admin/class-admin-settings.php:72
+msgid "Norton Webmaster Verification"
+msgstr ""
+
+#: admin/class-admin-settings.php:75
+msgid ""
+"If you havent registered for Norton Webmaster Verification Console, Go to "
+"%s Signup Here %s"
+msgstr ""
+
+#: admin/class-admin-settings.php:82
+msgid "Pinterest Webmaster Verification"
+msgstr ""
+
+#: admin/class-admin-settings.php:85
+msgid ""
+"If you havent registered for Pinterest Webmaster Verification Console, Go "
+"to %s Signup Here %s"
+msgstr ""
+
+#: admin/class-admin-settings.php:98 admin/class-admin-settings.php:125
+msgid "Analytics Scripts"
+msgstr ""
+
+#: admin/class-admin-settings.php:126
+msgid "Enter script tags"
+msgstr ""
+
+#: admin/class-admin-settings.php:128
+msgid "You can add comments to maintain redability like this: %s add comments %s"
+msgstr ""
+
+#: admin/class-website-verify-admin.php:157
+msgid "WEBSITE VERIFY"
+msgstr ""
+
+#: admin/class-website-verify-admin.php:229
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: admin/class-website-verify-admin.php:289
+msgid "Settings"
+msgstr ""
+
+#: admin/partials/website-verify-admin-display.php:34
+msgid "Webmaster Verification"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Website Verify"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://qubethemes.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Add verification code to verify your website using Google."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "qubethemes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://profiles.wordpress.org/qubethemes"
+msgstr ""

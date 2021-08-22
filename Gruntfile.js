@@ -255,7 +255,7 @@ module.exports = function (grunt) {
                     '!phpcs.ruleset.xml',
                     '!demo-content/**',
                     '!.github/**',
-                    '!svn-repository/**',
+                    '!.wordpress-org/**',
                     '!qubethemes-theme/.git',
                     '!*.gitignore',
                     '!*.editorconfig',
