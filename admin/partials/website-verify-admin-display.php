@@ -24,7 +24,7 @@ if (!defined('WPINC')) {
                 <form method="POST" action="options.php">
                     <?php settings_fields('website-verify');
                     do_settings_sections('website-verify');
-                    $options = get_option('website_verify_options');
+                    $options = website_verify_options();
                     ?>
                     <div class="website-verify-container">
                         <?php

@@ -20,33 +20,36 @@
  */
 
 // If this file is called directly, abort.
-if ( !defined( 'WPINC' ) ) {
-	die;
+if (!defined('WPINC')) {
+    die;
 }
 
 /**
  * Current plugin version.
  */
-define( 'WEBSITE_VERIFY_VERSION', '1.0.0' );
-define( 'WEBSITE_VERIFY_URL', plugin_dir_url( __FILE__ ) );
-define( 'WEBSITE_VERIFY_DIR_PATH', plugin_dir_path( __FILE__ ) );
+define('WEBSITE_VERIFY_VERSION', '1.0.0');
+define('WEBSITE_VERIFY_FILE', __FILE__);
+define('WEBSITE_VERIFY_URL', plugin_dir_url(WEBSITE_VERIFY_FILE));
+define('WEBSITE_VERIFY_DIR_PATH', plugin_dir_path(WEBSITE_VERIFY_FILE));
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-website-verify-activator.php
  */
-function activate_website_verify() {
-	require_once WEBSITE_VERIFY_DIR_PATH . 'includes/class-website-verify-activator.php';
-	Website_Verify_Activator::activate();
+function activate_website_verify()
+{
+    require_once WEBSITE_VERIFY_DIR_PATH . 'includes/class-website-verify-activator.php';
+    Website_Verify_Activator::activate();
 }
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-website-verify-deactivator.php
  */
-function deactivate_website_verify() {
-	require_once WEBSITE_VERIFY_DIR_PATH . 'includes/class-website-verify-deactivator.php';
-	Website_Verify_Deactivator::deactivate();
+function deactivate_website_verify()
+{
+    require_once WEBSITE_VERIFY_DIR_PATH . 'includes/class-website-verify-deactivator.php';
+    Website_Verify_Deactivator::deactivate();
 }
 
 /**
@@ -56,8 +59,8 @@ function deactivate_website_verify() {
 require WEBSITE_VERIFY_DIR_PATH . 'includes/class-website-verify.php';
 
 
-register_activation_hook( __FILE__, 'activate_website_verify' );
-register_deactivation_hook( __FILE__, 'deactivate_website_verify' );
+register_activation_hook(__FILE__, 'activate_website_verify');
+register_deactivation_hook(__FILE__, 'deactivate_website_verify');
 
 
 /**
@@ -65,10 +68,12 @@ register_deactivation_hook( __FILE__, 'deactivate_website_verify' );
  *
  * @since    1.0.0
  */
-function website_verify() {
+function website_verify()
+{
 
-return Website_Verify::get_instance();
+    return Website_Verify::get_instance();
 
 
 }
+
 website_verify();

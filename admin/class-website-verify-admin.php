@@ -68,25 +68,20 @@ class Website_Verify_Admin
 
         add_action('admin_menu', array($this, 'website_verify_add_menu'));
 
-        add_action('after_setup_theme', array($this, 'after_setup_theme'));
-
-        add_action('wp_head', array($this, 'website_verify_head'));
-
-        add_action('wp_footer', array($this, 'website_verify_footer'), 999);
 
         add_action('admin_enqueue_scripts', array($this, 'enqueue_styles'));
 
-        add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'website_verify_settings_link');
+        add_filter('plugin_action_links_' . plugin_basename(WEBSITE_VERIFY_FILE), array($this, 'website_verify_settings_link'));
 
         $this->version = $version;
 
         $this->plugin_name = $plugin_name;
 
-        $this->plugin_options = get_option('website_verify_options');
+        $this->plugin_options = website_verify_options();
 
 
     }
-    
+
     /**
      * Load dependencies
      */
@@ -101,15 +96,6 @@ class Website_Verify_Admin
 
         }
 
-    }
-
-    /**
-     * Hook into wp after setup.
-     *
-     * @since    1.0.0
-     */
-    public function after_setup_theme()
-    {
     }
 
     /**
@@ -154,7 +140,7 @@ class Website_Verify_Admin
 		   L207.9,384z"/>
    </g>
    </svg>');
-        add_menu_page(__('WEBSITE VERIFY', 'website-verify'), 'Website Verify', 'manage_options', 'website-verify', array($this, 'website_verify_pages'), 'data:image/svg+xml;base64,' . $menu_icon_svg);
+        add_menu_page(__('Website Verify', 'website-verify'), 'Website Verify', 'manage_options', 'website-verify', array($this, 'website_verify_pages'), 'data:image/svg+xml;base64,' . $menu_icon_svg);
     }
 
     /**
@@ -167,51 +153,44 @@ class Website_Verify_Admin
         register_setting(
             'website-verify',
             'website_verify_options',
-            array($this, 'website_verify_sanitize')
+            array($this, 'website_verify_settings_sanitize')
         );
 
     }
 
-    /**
-     * Sanitize inputs
-     *
-     * @since    1.0.0
-     */
-
     public function website_verify_settings_sanitize($input)
     {
+
         $sanitary_values = array();
+
         if (isset($input['google_verify'])) {
             $sanitary_values['google_verify'] = sanitize_text_field($input['google_verify']);
         }
 
-        $sanitary_values = array();
         if (isset($input['bing_verify'])) {
             $sanitary_values['bing_verify'] = sanitize_text_field($input['bing_verify']);
         }
 
-        $sanitary_values = array();
         if (isset($input['baidu_verify'])) {
             $sanitary_values['baidu_verify'] = sanitize_text_field($input['baidu_verify']);
         }
 
-        $sanitary_values = array();
         if (isset($input['yandex_verify'])) {
             $sanitary_values['yandex_verify'] = sanitize_text_field($input['yandex_verify']);
         }
 
-        $sanitary_values = array();
         if (isset($input['norton_verify'])) {
             $sanitary_values['norton_verify'] = sanitize_text_field($input['norton_verify']);
         }
 
-        $sanitary_values = array();
         if (isset($input['pinterest_verify'])) {
             $sanitary_values['pinterest_verify'] = sanitize_text_field($input['pinterest_verify']);
         }
 
-        if (isset($input['analytics_code'])) {
-            $sanitary_values['analytics_code'] = esc_textarea($input['analytics_code']);
+        if (isset($input['analytics_scripts_field'])) {
+            $sanitary_values['analytics_scripts_field'] = wp_kses($input['analytics_scripts_field'], array(
+                'script' => array()
+            ));
         }
 
         return $sanitary_values;
@@ -234,48 +213,6 @@ class Website_Verify_Admin
         include_once WEBSITE_VERIFY_DIR_PATH . 'admin/partials/website-verify-admin-display.php';
     }
 
-    /**
-     * Insert the code into header
-     */
-    public function website_verify_head()
-    {
-
-        $website_verify_head_options = ($this->plugin_options);
-
-        if (!empty($website_verify_head_options['google_verify'])) {
-            echo '<meta name="google-site-verification" content="' . esc_attr($website_verify_head_options['google_verify']) . '" />' . "\n";
-        }
-
-        if (!empty($website_verify_head_options['bing_verify'])) {
-            echo '<meta name="msvalidate.01" content="' . esc_attr($website_verify_head_options['bing_verify']) . '" />' . "\n";
-        }
-        if (!empty($website_verify_head_options['baidu_verify'])) {
-            echo '<meta name="baidu-site-verification" content="' . esc_attr($website_verify_head_options['baidu_verify']) . '" />' . "\n";
-        }
-        if (!empty($website_verify_head_options['yandex_verify'])) {
-            echo '<meta name="yandex-verification" content="' . esc_attr($website_verify_head_options['yandex_verify']) . '" />' . "\n";
-        }
-        if (!empty($website_verify_head_options['norton_verify'])) {
-            echo '<meta name="norton-safeweb-site-verification" content="' . esc_attr($website_verify_head_options['norton_verify']) . '" />' . "\n";
-        }
-        if (!empty($website_verify_head_options['pinterest_verify'])) {
-            echo '<meta name="p:domain_verify" content="' . esc_attr($website_verify_head_options['pinterest_verify']) . '" />' . "\n";
-        }
-    }
-
-    /**
-     * Insert the code into footer
-     */
-    public function website_verify_footer()
-    {
-
-        $website_verify_footer_options = ($this->plugin_options);
-
-        if (!empty($website_verify_footer_options['analytics_code'])) {
-            echo $website_verify_footer_options['analytics_code'];
-        }
-
-    }
 
     /**
      * Create settings link in plugin activation page
