@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Website Verify 1.0.0\n"
 "Report-Msgid-Bugs-To: qubethemes@gmail.com\n"
-"POT-Creation-Date: 2021-08-22 05:30:00+00:00\n"
+"POT-Creation-Date: 2021-08-24 05:53:52+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -99,24 +99,20 @@ msgstr ""
 msgid "You can add comments to maintain redability like this: %s add comments %s"
 msgstr ""
 
-#: admin/class-website-verify-admin.php:157
-msgid "WEBSITE VERIFY"
+#. Plugin Name of the plugin/theme
+msgid "Website Verify"
 msgstr ""
 
-#: admin/class-website-verify-admin.php:229
+#: admin/class-website-verify-admin.php:208
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: admin/class-website-verify-admin.php:289
+#: admin/class-website-verify-admin.php:226
 msgid "Settings"
 msgstr ""
 
 #: admin/partials/website-verify-admin-display.php:34
 msgid "Webmaster Verification"
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "Website Verify"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

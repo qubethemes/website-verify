@@ -11,6 +11,7 @@
 /.wordpress-org export-ignore
 /package-lock.json  export-ignore
 /package.json  export-ignore
+/website-verify.zip  export-ignore
 /Gruntfile.js  export-ignore
 /.jshintrc  export-ignore
 /node_modules  export-ignore
