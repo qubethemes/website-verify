@@ -53,7 +53,7 @@ abstract class Webstie_Verify_Admin_Setings_Abstract
 
             foreach ($instruction_lists as $list_item_index => $list_item) {
 
-                echo '<p>' . ($list_item_index + 1) . '. ' . wp_kses($list_item, $allowed_html) . '</p>';
+                echo '<p>' . absint(($list_item_index + 1)) . '. ' . wp_kses($list_item, $allowed_html) . '</p>';
             }
             echo '</div>';
         }
@@ -114,7 +114,7 @@ abstract class Webstie_Verify_Admin_Setings_Abstract
                     <?php echo wp_kses($description, array(
                         'a' => array(
                             'href' => array(),
-                            'target'=>array()
+                            'target' => array()
                         )
                     )) ?>
                 </small>
@@ -127,20 +127,24 @@ abstract class Webstie_Verify_Admin_Setings_Abstract
     private function render_textarea($field_id, $parent_id, $title, $description, $value)
     {
         $id = is_null($parent_id) ? $field_id : $parent_id . '[' . $field_id . ']';
+
+        $allowed_html = array(
+            'script' => array()
+        );
         ?>
         <div class="input-group">
             <label for="<?php echo esc_attr($id); ?>"><?php echo esc_html($title); ?></label>
             <textarea class="form-control"
                       id="<?php echo esc_attr($id); ?>"
                       name="<?php echo esc_attr($id); ?>" cols="10"
-                      rows="15"><?php echo $value; ?></textarea>
+                      rows="15"><?php echo wp_kses($value, $allowed_html);; ?></textarea>
 
             <?php if (!empty($description)) { ?>
                 <small class="form-text text-muted">
                     <?php echo wp_kses($description, array(
                         'a' => array(
                             'href' => array(),
-                            'target'=>array()
+                            'target' => array()
                         )
                     )) ?>
                 </small>
