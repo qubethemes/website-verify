@@ -14,7 +14,7 @@ class Website_Verify_Admin_Settings extends Webstie_Verify_Admin_Setings_Abstrac
                     'title' => __('Instructions', 'website-verify'),
                     'lists' => array(
                         ' Copy the code from the content attribute,as shown in example:<br/>
-                                &lt;meta name="google-site-verification" content="<code>Zf6gKlRQGrTESbyS5HPHftpVDjH_GY56UYTTdFFre</code>"',
+                                &lt;meta name="google-site-verification" content="<code>Zf6gKlRQGrTESbyS5HPHftpVDjH_GY56UYTTdFFre</code>"/>',
                         ' Add your site verification code and in respective meta tag and save the changes.',
                         ' Meta Tags will be inserted in header section'
                     ),
