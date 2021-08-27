@@ -1,5 +1,5 @@
-=== Website Verify ===
-Contributors: qubethemes, shails
+=== Website Verify - Verify your Domain, Ownership in most popular search Engines ===
+Contributors: qubethemes, shails, ughimire1
 Tags: meta tag verification,google analytics,verification, ownership, statistics, verify,google analytics, bing, yahoo, alexa, pinterest, verification,norton, norton safe web
 Requires at least: 5.8
 Tested up to: 5.8
