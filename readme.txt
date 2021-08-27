@@ -1,4 +1,4 @@
-=== Website Verify - Verify your Domain, Ownership in most popular search Engines ===
+=== Website Verify - Verify your domain ownership in most popular search engines ===
 Contributors: qubethemes, shails, ughimire1
 Tags: meta tag verification,google analytics,verification, ownership, statistics, verify,google analytics, bing, yahoo, alexa, pinterest, verification,norton, norton safe web
 Requires at least: 5.8
