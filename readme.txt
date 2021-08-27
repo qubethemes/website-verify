@@ -3,6 +3,7 @@ Contributors: qubethemes,shails
 Tags: meta tag verification,google analytics,verification, ownership, statistics, verify,google analytics, bing, yahoo, alexa, pinterest, verification,norton, norton safe web
 Requires at least: 5.8
 Tested up to: 5.8
+Stable tag: 1.0.2
 Requires PHP: 7.0+
 License: 2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
@@ -30,3 +31,5 @@ Yes
 == Changelog ==
 = 1.0.0 | 2021/08/22 =
 * Initial release
+= 1.0.2 | 2021/08/27 =
+* screenshot & banner added

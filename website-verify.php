@@ -1,5 +1,4 @@
 <?php
-
 /**
  *
  * @link              https://qubethemes.com/
@@ -10,7 +9,7 @@
  * Plugin Name:       Website Verify
  * Plugin URI:        https://wordpress.org/plugins/website-verify
  * Description:       Add verification code to verify your website using Google & Other Search Engines
- * Version:           1.0.0
+ * Version:           1.0.2
  * Author:            qubethemes
  * Author URI:        https://qubethemes.com/
  * License:           GPL-2.0+
@@ -27,7 +26,7 @@ if (!defined('WPINC')) {
 /**
  * Current plugin version.
  */
-define('WEBSITE_VERIFY_VERSION', '1.0.0');
+define('WEBSITE_VERIFY_VERSION', '1.0.2');
 define('WEBSITE_VERIFY_FILE', __FILE__);
 define('WEBSITE_VERIFY_URL', plugin_dir_url(WEBSITE_VERIFY_FILE));
 define('WEBSITE_VERIFY_DIR_PATH', plugin_dir_path(WEBSITE_VERIFY_FILE));
