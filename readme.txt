@@ -1,5 +1,5 @@
 === Website Verify ===
-Contributors: qubethemes,shails
+Contributors: qubethemes, shails
 Tags: meta tag verification,google analytics,verification, ownership, statistics, verify,google analytics, bing, yahoo, alexa, pinterest, verification,norton, norton safe web
 Requires at least: 5.8
 Tested up to: 5.8
